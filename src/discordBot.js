@@ -106,7 +106,7 @@ class DiscordBot {
         message.content.startsWith("/verify") ||
         message.content.startsWith("!join")
       ) {
-        await message.reply("To verify your Mice, please type: **/join**");
+        await message.reply("To verify your Creepz, please type: **/join**");
       }
     });
   }

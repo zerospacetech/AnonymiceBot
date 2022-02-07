@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
-
+@-webkit-keyframes floating {
+     0% {
+         -webkit-transform: rotate(0);
+         transform: rotate(0) 
+    }
+     50% {
+         -webkit-transform: rotate(5deg);
+         transform: rotate(5deg) 
+    }
+     to {
+         -webkit-transform: rotate(0);
+         transform: rotate(0) 
+    }
+}
 :root {
   --main-bg-color: #181719;
   --secondary-bg-color: #26242b;
@@ -15,23 +28,40 @@
 }
 
 @font-face {
-  font-family: "Pixel Font";
-  src: URL("fonts/pixelfont.ttf") format("truetype");
+  font-family: "Lizard Font";
+  src: URL("fonts/lizardfont.woff2") format("woff2");
+
 }
 
 * {
-  font-family: "Share Tech Mono", sans-serif;
-  font-weight: bold;
+
+  font-size: 1.2em;
 }
 
 body {
-  font-family: "Pixel Font";
-  background-color: var(--main-bg-color);
+  font-family: "Lizard Font";
+  font-weight: bold;
+  background: radial-gradient(46.13% 46.13% at 50% 69.53%, #6b75d0 0, #232256 100%); 
   color: var(--main-text-color);
 }
 
 header {
+  font-family: "Lizard Font";
+  font-weight: bold;
+  font-size: 1.2em;
   text-align: center;
+}
+.text{
+  font-family: "Lizard Font";
+  font-weight: bold;
+   font-size: 1.2em;
+}
+.main-content{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
 
 .success .success-good {
@@ -52,7 +82,6 @@ article {
 
 #signin {
   margin-top: 20px;
-  width: 200px;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -75,13 +104,6 @@ article {
   padding: 6px 20px;
 }
 
-.meme-img {
-  max-width: 728px;
-}
-
-.meme-message {
-  text-align: center;
-}
 
 .hidden {
   display: none;
@@ -145,8 +167,9 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Pixel Font", sans-serif;
+  font-family: "Lizard Font";
   font-weight: bold;
+  font-size: 200%;
 }
 
 .hidden {
@@ -156,9 +179,8 @@ h4 {
 .error-popup{
   /* To make the modal window center */
   background-color: var(--main-bg-color);
-  box-shadow: 0 0 5000px 5000px rgba(0, 0, 0, 0.88);
-  border: outset 1vw var(--main-border-color);
-  border-radius: 0.2em;
+  box-shadow: 0 0 5000px 5000px rgba(0, 0, 0, 0.92);
+  border-radius: 0.5em;
 
   position: fixed;
   left: 50%;
@@ -168,8 +190,57 @@ h4 {
   /* To make the modal content center (additional)*/
   text-align: center;
   width: 50%;
-  font-size: 1.5em;
+  font-size: 1em;
   }
+  
+
+
+.floating-item {
+     position: absolute 
+}
+
+.floating-item.item-1 {
+     width: 20%;
+     left: 5%;
+     top: 24%;
+     -webkit-animation: floating 10s linear infinite;
+     animation: floating 10s linear infinite;
+}
+
+.floating-item.item-2 {
+     width: 6%;
+     left: 27%;
+     top: 8% 
+}
+.floating-item.item-3 {
+     width: 16%;
+     left: 8%;
+     top: 73%;
+     -webkit-animation: float 10s linear infinite;
+     animation: float 10s linear infinite 
+}
+.floating-item.item-4 {
+     width: 12%;
+     right: 5%;
+     top: 70%;
+     -webkit-animation: floating 5s linear infinite;
+     animation: floating 5s linear infinite 
+}
+.floating-item.item-5 {
+     width: 10%;
+     right: 15%;
+     top: 45%;
+     -webkit-animation: light 30s linear infinite;
+     animation: light 30s linear infinite 
+}
+.floating-item.item-6 {
+     width: 30%;
+     right: 15%;
+     top: 10%;
+     -webkit-animation: float 10s linear infinite;
+     animation: float 10s linear infinite 
+}
+ 
 
   @media only screen and (max-width: 768px) {
     .error-popup {
@@ -177,3 +248,13 @@ h4 {
     }
   }
   
+  .footer-center {
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  text-align: center;
+  left: 50%;
+  top: 96%;
+  transform: translate(-50%, -50%);
+  font-size: .5em;
+  
+}

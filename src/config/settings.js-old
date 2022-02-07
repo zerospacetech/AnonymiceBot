@@ -5,7 +5,9 @@
 # © 2021                                                                       #
 ###############################################################################*/
 
-const CreepzABI = require("../contracts/ColdBloodedCreepz.json");
+const AnonymiceABI = require("../contracts/mice_abi.json");
+const CheethABI = require("../contracts/cheeth_abi.json");
+const AnonymiceBreedingABI = require("../contracts/baby_mice_abi.json");
 
 const settings = {
   rules: [
@@ -25,42 +27,40 @@ const settings = {
     //   },
     // },
     // completely customized verification rule
-	 {
-	   name: "Lizard Hands",
-	   roleId: "939774475405238292",
-	   executor: {
-		 type: "CreepzVerificationRule.js",
-		 config: {
-		   contractAddress: "0xfE8C6d19365453D26af321D0e8c910428c23873F",
-		   contractAbi: CreepzABI,
-		   method: "balanceOf",
-		 },
-	   },
-	 },
-	 {
-	   name: "Lizard Lord",
-	   roleId: "939774384946700308",
-	   executor: {
-		 type: "CreepzVerificationRuleBeta.js",
-		 config: {
-		   contractAddress: "0xfE8C6d19365453D26af321D0e8c910428c23873F",
-		   contractAbi: CreepzABI,
-		   method: "balanceOf",
-		 },
-	   },
-	 },
-	 {
-	   name: "Big Lizard Energy",
-	   roleId: "939774051990253649",
-	   executor: {
-		 type: "CreepzVerificationRuleGamma.js",
-		 config: {
-		   contractAddress: "0xfE8C6d19365453D26af321D0e8c910428c23873F",
-		   contractAbi: CreepzABI,
-		   method: "balanceOf",
-		 },
-	   },
-	 },
+    {
+      name: "Anonymice Verifier",
+      executor: {
+        type: "AnonymiceVerificationRule.js",
+        config: {
+          roles: [
+            {
+              name: "Genesis Role",
+              id: "939774051990253649"
+            },
+            {
+              name: "Baby Role",
+              id: "939774384946700308"
+            },
+            {
+              name: "Alpha Role",
+              id: "939774475405238292"
+            }
+          ],
+          AnonymiceContract: {
+            Address: "0xC7492fDE60f2eA4DBa3d7660e9B6F651b2841f00",
+            ABI: AnonymiceABI,
+          },
+          CheethContract: {
+            Address: "0x5f7BA84c7984Aa5ef329B66E313498F0aEd6d23A",
+            ABI: CheethABI,
+          },
+          AnonymiceBreedingContract: {
+            Address: "0x15cc16bfe6fac624247490aa29b6d632be549f00",
+            ABI: AnonymiceBreedingABI,
+          }
+        },
+      },
+    },
   ],
 };
 

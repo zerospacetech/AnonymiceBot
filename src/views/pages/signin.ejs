@@ -2,47 +2,63 @@
 <%- include('../partials/head', locals && locals.data ? locals.data : {}) %>
 
 <body>
-
+	<div>
+		<img class="floating-item item-1" src="assets/images/stones-r.40356f10.svg" alt="">
+		<img class="floating-item item-2" src="assets/images/itemsR.53b32244.svg" alt="">
+		<img class="floating-item item-3" src="assets/images/itemsBottomR.92bf9062.svg" alt="">
+		<img class="floating-item item-4" src="assets/images/itemsL.6bf551ea.svg" alt="">
+		<img class="floating-item item-5" src="assets/images/nikes.1ed53e16.svg" alt="">
+		<img class="floating-item item-6" src="assets/images/eyeL.39368977.svg" alt="">
+	</div>
+	
     <header>
-        <h1>Anonymice Discord Verification</h1>
+        <h1>Creepz Discord Verification</h1>
     </header>
+	
+	<div class="main-content">
+		<article class="verify">
+			<p>Please sign a signature request with your Wallet.</p>
+			<p>Your Address: <span id="walletAddressValue"></span></p>
+			<button id="signin"><span class="text">Verify now!</span>
+				<div class="dot-bricks"></div>
+			</button>
+		</article>
+		
+		<article class="success hidden">
+			<h2 class="success-good">Success</h2>
+			<h2 class="success-bad">404 - No Creepz Found!</h2>
+			<p>You received the following roles on the Creepz Discord Server:</p>
+			<p class="roles"></p></br>
+		</article>
+		
+		<article class="memes hidden">
+			<p class="meme-message">Verifying Creepz ownership, this can take a few seconds...<br>
+		</article>
 
-    <article class="verify">
-        <p>Please sign a signature request with your Wallet.</p>
-        <p>Your Address: <span id="walletAddressValue"></span></p>
-        <button id="signin"><span class="text">Verify now!</span>
-            <div class="dot-bricks"></div>
-        </button>
-    </article>
-    <article class="success hidden">
-        <h2 class="success-good">Say Cheeth, you did it!</h2>
-        <h2 class="success-bad">404 - Mice Missing!</h2>
-        <p>Your received the following roles on the Anonymice Discord Server:</p>
-        <p class="roles"></p>
-    </article>
-    <article class="memes hidden">
-        <p class="meme-message">We are now verify ownership, this can take a few seconds...<br>While our server is busy
-            verifying your Mice, may we entertain you with some cheethy Memes?</p>
-        <button id="nextmeme" onclick="nextMeme()">Next</button>
-        <img class="meme-img" src="assets/images/meme_0.png">
-    </article>
+		<div class="hidden error-popup" id="web3-error-popup">
+			<div class="content">
+				<p>You must use a web3 enabled browser with MetaMask.</p>
+				<a href="https://metamask.io/" target="_blank" rel="noopener noreferrer">MetaMask</a>
+			</div>
+		</div>
 
-    <div class="hidden error-popup" id="web3-error-popup">
-        <div class="content">
-            <p>You must use a web3 enabled browser with MetaMask or the MetaMask mobile app to verify.</p>
-            <a href="https://metamask.io/" target="_blank" rel="noopener noreferrer">MetaMask</a>
-        </div>
-    </div>
-
-    <div class="hidden error-popup" id="error-popup">
-        <div class="content">
-            <p id="errorText"></p>
-            <p class="standardDiscordErrorText">
-                Please generate a new request in Discord.
-            </p>
-        </div>
-    </div>
+		<div class="hidden error-popup" id="error-popup">
+			<div class="content">
+				<p id="errorText"></p>
+				<p class="standardDiscordErrorText">
+					Please generate a new verification in Discord.
+				</p>
+			</div>
+		</div>
+		
+	</div>
+	
 </body>
 
+<footer class="footer-center">
+	
+<p>Want verification on your project? <a href="https://t.me/ash4wards">Get In Touch.</a></p>
+  <p>&copy; 2022 4wards.io - Powered by Wildfire & Anonymice.</p>
+</footer>
 
 </html>

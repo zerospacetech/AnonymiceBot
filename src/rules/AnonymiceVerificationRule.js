@@ -32,7 +32,7 @@ class AnonymiceVerificationRule {
     try {
       //genesis mice
       let genesisMiceRoleConfig = this.config.roles.find(
-        (r) => r.name === "Genesis Mice"
+        (r) => r.name === "Genesis Role"
       );
       let genesisMiceRole = discordRoles.find(
         (r) => r.id === genesisMiceRoleConfig.id
@@ -47,7 +47,7 @@ class AnonymiceVerificationRule {
         qualifiesForGenesisRole
       );
       executionResults.push({
-        role: "Genesis Mice",
+        role: "Genesis Role",
         roleId: genesisMiceRole.id,
         qualified: qualifiesForGenesisRole,
         result: {
@@ -64,7 +64,7 @@ class AnonymiceVerificationRule {
     //execute - baby mice
     try {
       let babyMiceRoleConfig = this.config.roles.find(
-        (r) => r.name === "Baby Mice"
+        (r) => r.name === "Baby Role"
       );
       let babyMiceRole = discordRoles.find(
         (r) => r.id === babyMiceRoleConfig.id
@@ -72,7 +72,7 @@ class AnonymiceVerificationRule {
       qualifiesForBabyRole = result.babies.length > 0;
       await this.manageRoles(discordUser, babyMiceRole, qualifiesForBabyRole);
       executionResults.push({
-        role: "Baby Mice",
+        role: "Baby Role",
         roleId: babyMiceRole.id,
         qualified: qualifiesForBabyRole,
         result: result.babies,
@@ -85,7 +85,7 @@ class AnonymiceVerificationRule {
     //execute - alpha mice
     try {
       let alphaMiceRoleConfig = this.config.roles.find(
-        (r) => r.name === "Alpha Mice"
+        (r) => r.name === "Alpha Role"
       );
       let alphaMiceRole = discordRoles.find(
         (r) => r.id === alphaMiceRoleConfig.id
@@ -95,7 +95,7 @@ class AnonymiceVerificationRule {
       await this.manageRoles(discordUser, alphaMiceRole, qualifiesForAlphaMice);
 
       executionResults.push({
-        role: "Alpha Mice",
+        role: "Alpha Role",
         roleId: alphaMiceRole.id,
         qualified: qualifiesForAlphaMice,
         result: {
